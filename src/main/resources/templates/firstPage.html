@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Rate Info</title>
+</head>
+
+<body>
+<h1>Today's Currency Exchange Rate against Euro:</h1>
+    <table align="center" border = '1px;solid' >
+        <thead>
+            <tr>
+                <td>Date</td>
+                <td>HKD</tdth>
+                <td>GBP</td>
+                <td>USD</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${currencyRate.date}"></td>
+                <td th:text="${currencyRate.rates.get('HKD')}"></td>
+                <td th:text="${currencyRate.rates.get('GBP')}"></td>
+                <td th:text="${currencyRate.rates.get('USD')}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br/>
+    <br/>
+    <a href="/getCurrencyInfo">Get Historical Exchange Rates</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ </head>
+<body>
+<h1>Currency Exchange Rate of last 6 months against</h1>
+    <table align="center" border ="1px;solid">
+        <thead>
+            <tr>
+                <td>Currency</td>
+                <td >HKD</td>
+                <td >GBP</td>
+                <td >USD</td>
+            </tr>
+        </thead>
+        <tbody>
+               <tr th:each="currencyRate,stat: ${currencyRateList}">
+                   <td th:text="Month + ${currentMonth - stat.index}"></td>
+                   <td th:text="${currencyRate.rates.get('HKD')}"></td>
+                   <td th:text="${currencyRate.rates.get('GBP')}"></td>
+                   <td th:text="${currencyRate.rates.get('USD')}"></td>
+               </tr>
+        </tbody>
+    </table>
+</body>
+</html>
