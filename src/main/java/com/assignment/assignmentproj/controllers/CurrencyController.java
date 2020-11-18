@@ -28,7 +28,6 @@ public class CurrencyController {
       if(currencyRate!=null){
           //adding objectto display in view Layer in thymleaf template.
           model.addAttribute("currencyRate",currencyRate);
-          System.out.println(currencyRate);
           return "firstPage";
       }
       return "error";
